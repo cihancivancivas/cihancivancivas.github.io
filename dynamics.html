@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Bioinformatics</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <style>
+            #outer {
+                position: absolute;
+                top: 45%;
+                color: aqua;
+                 background-color: burlywood;
+                 left: 45%;
+                 width: 5em;
+                 height: 2em;
+                     
+                 }
+                 #inner {
+                     position: static;
+                     top: 45%;
+                     left: 45%;
+                     color: darkgreen;
+                     background-color: bisque;
+}
+                 
+        </style>
+        <div id="outer">
+            <span id="inner">
+                <a href="https//www.hello.com.tr" target="_blank">Hello</a></span>
+        </div>
+        <script> 
+            $('#inner').hover(
+                function() {
+                    $(this).css('background-color',"green");
+                }, 
+                function() {
+                    $(this).css("background-color","blue");
+                }
+            );
+        </script>
+    </body>
+</html>
