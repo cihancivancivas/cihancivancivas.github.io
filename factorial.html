@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Factorial (n)</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script>
+             function factorial(num) {
+                 var res=1;
+                 for(var i=2; i<=num; i++)
+                     res = res * i;
+                 
+             }
+              return num;
+         }
+            </script>
+    </head>
+    <body>
+        <div>
+            <form>
+                <input type="text" id="num" value="6"/>
+                <input type="text" id="res" placeholder="here goes the result"/>
+                <input type="button" onmouseover="calculate();"
+                       onclick="calculate ();"/>
+            </form>
+            <script>
+           
+             function calculate ()
+             var innum = $('#num') val{};
+             var res = factorial(innum);
+             $('#res') val(res);
+         }
+            </script>
+            
+        </div>
+    </body>
+</html>
