@@ -1,0 +1,44 @@
+<html>
+    <head>
+    <title>Summing of numbers</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+     <script>
+         function Sum (a,b){
+             a=258;
+             b=1587;
+             {
+                 var res=a+b;
+             }
+             return res;
+         }
+         
+         
+
+     </script>
+</head>
+<body>
+<div>
+    <form>
+        <input type="text" id="a" value="258"/>
+        <input type="text" id="b" value="1587"/>
+        <input type="text" id="res" placeholder="Result of Summin"/>
+        <input type="button" 
+               onmouseover="calculate();"
+               onclick="calculate();"/>
+        
+    </form>
+    
+</div>
+<script>
+    function calculate(){
+        var innum = $('#a,#b').val();
+        var res= Sum(innum);
+        $('#res').val(res);
+    } 
+
+    </script>
+
+</body>
+</html>
