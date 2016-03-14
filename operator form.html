@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Basic mathematics </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <form>
+                <input type="text" name="input1" placeholder="Number 1"/>
+                <select>
+                    
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                </select>
+                <input type="text" id="num1" name="input2" placeholder="Number 2"/>
+                <input type="button" Name="calculate" id="num2" placeholder="calculate"/>
+                <input type="text" id="calc" name="calculate" onclick="calculate();"/>
+            </form></div>
+        <script>
+            var i=1;
+           
+            function calculate(){
+                 var in1 = parseInt($('input1').val());
+                 var in2 = parseInt($('input2').val());
+                if (checkInput1(in1,in2) ){
+                    var res = eval(input1 + $('#operator').val(res)+ input2);
+                    $('#output').val(res);
+            } else {
+                $('#error').html("You made "+ i +" mistakes");
+                i++;
+                
+                
+            }
+                    
+                }
+            function checkInput1(){
+                  if(isNaN(in1) || isNaN)
+              }
+              
+            
+        </script>
+    </body>
+</html>
