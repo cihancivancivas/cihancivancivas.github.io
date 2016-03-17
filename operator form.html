@@ -7,32 +7,36 @@ and open the template in the editor.
 <html>
     <head>
         <title>Basic mathematics </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <div>
             <form>
-                <input type="text" name="input1" placeholder="Number 1"/>
-                <select>
-                    
+                <input type="text" id="input1">
+                <select id="operator">                    
                     <option value="+">+</option>
                     <option value="-">-</option>
                     <option value="*">*</option>
                     <option value="/">/</option>
                 </select>
-                <input type="text" id="num1" name="input2" placeholder="Number 2"/>
-                <input type="button" Name="calculate" id="num2" placeholder="calculate"/>
-                <input type="text" id="calc" name="calculate" onclick="calculate();"/>
-            </form></div>
+                <input type="text" id="input2">
+                <input type="button" id="calc" value="calc" onclick="calculate();">
+                <input type="text" id="output" disabled>
+                    <br>
+            </form>
+            <div id="error">
+            </div>
+            </div>
         <script>
             var i=1;
            
             function calculate(){
-                 var in1 = parseInt($('input1').val());
-                 var in2 = parseInt($('input2').val());
-                if (checkInput1(in1,in2) ){
-                    var res = eval(input1 + $('#operator').val(res)+ input2);
+                 var in1 = parseInt($('#input1').val());
+                 var in2 = parseInt($('#input2').val());
+                if (checkInput1(in1,in2)){
+                    var res = eval(in1 + $('#operator').val()+ in2);
                     $('#output').val(res);
             } else {
                 $('#error').html("You made "+ i +" mistakes");
@@ -42,10 +46,31 @@ and open the template in the editor.
             }
                     
                 }
-            function checkInput1(){
-                  if(isNaN(in1) || isNaN)
+            function checkInput1(in1,in2){
+                  if(isNaN(in1) || isNaN(in2)) {
+                      return false;
+                  }
+                  return true;
               }
               
+            function checkInput2 (in1,in2){
+                if (isNaN(in1)){
+                    return false;
+                }
+                if (isNaN(in2)){
+                    return false;
+                }
+                return true;
+            }
+            
+            function checkInput3 (in1,in2){
+                if (isNaN(in1)){
+                    return false;                    
+                }else if (isNaN(in2)) {
+                    return false;
+                }
+                return true;
+            }
             
         </script>
     </body>
