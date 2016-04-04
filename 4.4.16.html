@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Draggable box</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <script type="text/javascript"
+    src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript"
+    src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css"
+    href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css"/>
+    </head>
+    <body>
+        <style>
+            .box{height: 15px;
+            width: 20px;
+            position: absolute}
+            #d1{background-color: olivedrab;
+                width: 25%;
+                height: 25%;
+                right: 40%;
+                top:50%;}
+            #d2{ position: absolute;
+                background-color: lavenderblush;
+                color:darkslateblue;
+                bottom: 95%;
+                    left:90%;
+                    width:15%;
+                    height: 15%;
+               }
+                .droppable.active { 
+            background-color: red; 
+         }
+                .active {
+            border-color : blue;
+            background : grey;
+            }  
+         .hover {
+            border-color : red;
+            background : green;
+         }
+
+            
+        </style>
+        <script>
+ $(function() {
+    $( "#d2" ).draggable();
+    $("#d1").draggable();
+     $( "#d1" ).droppable({
+         activeClass: "active",
+            hoverClass:  "hover",
+      drop: function( event, ui ) {
+        $( this )
+          .addClass( "ui-state-highlight" )
+          .find( "p" )
+            .html( "Dropped!" );
+      }
+    });
+  });
+        </script>
+        <div id="d1" class="box" >
+            <p>Target</p>
+        </div>
+        <div id="d2" class="ui-icon-arrowthick-1-w">
+            
+            <p>Arrow</p>
+        </div>
+    </body>
+</html>
