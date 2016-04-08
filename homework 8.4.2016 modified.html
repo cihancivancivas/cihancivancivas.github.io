@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>  
+        <title>Drag n Drop</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+        <style>
+            #target{
+                position: absolute;
+                top: 10px;
+                left:10px;
+                width: 300px;
+                height: 300px;
+                background-color: blue;
+            }
+            #arrow{
+                position: absolute;
+                top: 200px;
+                left: 500px;
+                width: 100px;
+                width: 100px;
+                background-color: red;
+            }
+            ul
+            {
+                list-style-type: none;
+            }
+        </style>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+
+
+
+        <script type="text/javascript">
+            $(document).ready(function () {//Anything in here will be executed
+                //once the document is fully loaded.
+                $("#arrow").draggable();
+                $("#target").droppable(
+                        {
+                            drop: function () {
+                                $("#arrow").draggable("disable");
+                                $("#target").draggable("disable");
+                                $("#target").css("background-color", "red").html("");
+                                $("#arrow").css("background-color", "red").html("");
+                            }
+                        }
+                );
+            });
+        </script>
+
+    </head>
+    <body>
+        <div>
+
+
+            <ul id="numName">
+                <li> </li>
+                <li id="number[0]">Ichi</li>
+                <li id="number[1]">Ni</li>
+                <li id="number[2]">San</li>
+                <li id="number[3]">Shi</li>
+                <li id="number[4]">Go</li>
+                <li id="number[5]">Roku</li>
+                <li id="number[6]">Shichi</li>
+                <li id="number[7]">Hachi</li>
+                <li id="number[8]">Ku</li>
+                <li id="number[9]">Ju</li>
+            </ul>
+            <ul id="numNumeric">
+                <li id="number2[0]">1</li>
+                <li id="number2[1]">2</li>
+                <li id="number2[2]">3</li>
+                <li id="number2[3]">4</li>
+                <li id="number2[4]">5</li>
+                <li id="number2[5]">6</li>
+                <li id="number2[6]">7</li>
+                <li id="number2[7]">8</li>
+                <li id="number2[8]">9</li>
+                <li id="number2[9]">10</li>
+            </ul>
+        </div>
+        <script type="text/javascript">
+            $("#arrow").draggable();
+            $("#target").draggable();
+  var number = ["Ichi", "Ni", "San", "Shi", "Go", "Roku", "Shichi", "Hachi", "Ku", "Ju"];
+       var number2 =["1", "2", "3", "4","5","6","7","8","9","10"];
+       for (i=0;i<number.length;i++){
+           $("#number2[i]").draggable();
+            }
+            for (x=0;x<number2.length;x++){
+            $("#number2[x]").droppable({drop: function (event, ui) {
+                    var di = ui.draggable.attr("id");
+                    if (di === "number[x]") {
+                        $("#number[x]").draggable("disable");
+                        $("#number2[x]").html("&nbsp;").css("background-color", "green");
+                    }
+                }});}
+           
+            $.fn.randomize = function (selector) {
+                var $elems = selector ? $(this).find(selector) : $(this).children(),
+                        $parents = $elems.parent();
+                $parents.each(function () {
+                    $(this).children(selector).sort(function () {
+                        return Math.round(Math.random()) - 0.5;
+                        // }). remove().appendTo(this); // 2014-05-24: Removed `random` but leaving for reference. See notes under 'ANOTHER EDIT'
+                    }).detach().appendTo(this);
+                });
+                return this;
+            };
+            $('ul').randomize();
+        </script>        
+    </body>
+</html>
